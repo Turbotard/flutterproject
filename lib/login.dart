@@ -1,7 +1,8 @@
+import 'package:ecurie_flutter/main.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class Login extends StatelessWidget {
           colorSchemeSeed: const Color(0xff6750a4), useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(title: const Text('Card Examples')),
-        body: const Column(
+        body: Column(
           children: <Widget>[
             Spacer(),
             ElevatedCardExample(),
@@ -23,16 +24,50 @@ class Login extends StatelessWidget {
 }
 
 class ElevatedCardExample extends StatelessWidget {
-  const ElevatedCardExample({super.key});
+  ElevatedCardExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Card(
         child: SizedBox(
           width: 500,
           height: 300,
-          child: Center(child: Text('Elevated Card')),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Username',
+                  ),
+                ),
+                SizedBox(height: 20,), // Ajout d'un espacement entre les champs
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                  ),
+                ),
+                
+                SizedBox(height: 20,),
+                // FloatingActionButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Forgot password ?',)), 
+                //     );
+                //   },
+                //   tooltip: 'Accueil',
+                // ),
+                Text(
+                  "Forgot password ?",
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
