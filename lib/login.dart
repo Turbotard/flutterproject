@@ -30,7 +30,8 @@ class ElevatedCardExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
-    const IconData account_circle_outlined = IconData(0xee35, fontFamily: 'MaterialIcons');
+    const IconData account_circle_outlined =
+        IconData(0xee35, fontFamily: 'MaterialIcons');
 
     return Center(
       child: Card(
@@ -38,60 +39,62 @@ class ElevatedCardExample extends StatelessWidget {
           width: 500,
           height: 300,
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Username',
-                  ),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Username',
                 ),
-                SizedBox(height: 20,), // Ajout d'un espacement entre les champs
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                  ),
+              ),
+              SizedBox(
+                height: 20,
+              ), // Ajout d'un espacement entre les champs
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
                 ),
-                
-                SizedBox(height: 20,),
-                // FloatingActionButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Forgot password ?',)), 
-                //     );
-                //   },
-                //   tooltip: 'Accueil',
-                // ),
-                // Text(
-                //   "Forgot password ?",
-                // )
-                
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()), 
-                    );
-                  },
-                  tooltip: 'Se connecter',
-                  child: Icon(home),
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUp()), 
-                    );
-                  },
-                  tooltip: 'Créer un compte',
-                  child: Icon(account_circle_outlined),
-                ),
-              ]
-            ),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+              // FloatingActionButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Forgot password ?',)),
+              //     );
+              //   },
+              //   tooltip: 'Accueil',
+              // ),
+              // Text(
+              //   "Forgot password ?",
+              // )
+
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyApp()),
+                  );
+                },
+                tooltip: 'Se connecter',
+                child: Icon(home),
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUp()),
+                  );
+                },
+                tooltip: 'Créer un compte',
+                child: Icon(account_circle_outlined),
+              ),
+            ]),
           ),
         ),
       ),
