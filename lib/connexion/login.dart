@@ -1,6 +1,6 @@
 import 'package:ecurie_flutter/main.dart';
 import 'package:flutter/material.dart';
-import 'package:ecurie_flutter/signup.dart';
+import 'package:ecurie_flutter/connexion/signup.dart';
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);

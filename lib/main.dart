@@ -1,5 +1,5 @@
-import 'package:ecurie_flutter/login.dart';
-import 'package:ecurie_flutter/signup.dart';
+import 'package:ecurie_flutter/connexion/login.dart';
+import 'package:ecurie_flutter/connexion/signup.dart';
 import 'package:flutter/material.dart';
 import 'db/db.dart';
 
