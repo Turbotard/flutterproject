@@ -1,3 +1,4 @@
+import 'package:ecurie_flutter/login.dart';
 import 'package:flutter/material.dart';
 import 'db/db.dart';
 
@@ -73,6 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+  const IconData accountCircleSharp = IconData(0xe743, fontFamily: 'MaterialIcons');
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -118,11 +121,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Login()), 
+              );
+            },
+            tooltip: 'Se connecter',
+            child: Icon(accountCircleSharp),
+          ),
+          SizedBox(width: 16), // Add some space between the buttons
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+        ],
+      ),
     );
   }
 }
