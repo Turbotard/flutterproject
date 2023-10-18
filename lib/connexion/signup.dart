@@ -1,8 +1,9 @@
 import 'package:ecurie_flutter/main.dart';
+import 'package:ecurie_flutter/connexion/login.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  Login({Key? key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class ElevatedCardExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
+    const IconData accountCircleSharp = IconData(0xe743, fontFamily: 'MaterialIcons');
     return Center(
       child: Card(
         child: SizedBox(
@@ -76,6 +78,16 @@ class ElevatedCardExample extends StatelessWidget {
                   },
                   tooltip: 'Se connecter',
                   child: Icon(home),
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()), 
+                    );
+                  },
+                  tooltip: 'Se connecter',
+                  child: Icon(accountCircleSharp),
                 ),
               ]
             ),
