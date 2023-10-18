@@ -40,7 +40,7 @@ class ElevatedCardExample extends StatelessWidget {
           height: 300,
           child: Center(
             child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -57,43 +57,49 @@ class ElevatedCardExample extends StatelessWidget {
                   labelText: 'Password',
                 ),
               ),
-
-              SizedBox(
-                height: 20,
-              ),
-              // FloatingActionButton(
-              //   onPressed: () {
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Forgot password ?',)),
-              //     );
-              //   },
-              //   tooltip: 'Accueil',
-              // ),
-              // Text(
-              //   "Forgot password ?",
-              // )
-
-              FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
-                  );
-                },
-                tooltip: 'Se connecter',
-                child: Icon(home),
-              ),
-              FloatingActionButton(
-                onPressed: () {
+              SizedBox(height: 20,),
+              GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SignUp()),
                   );
                 },
-                tooltip: 'Créer un compte',
-                child: Icon(account_circle_outlined),
+                child: Text(
+                  "Forgot password ?",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  ),
               ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(width: 20), // Espacement entre les boutons
+                  FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyApp()),
+                      );
+                    },
+                    tooltip: 'Se connecter',
+                    child: Icon(home),
+                  ),
+                  SizedBox(width: 20), // Espacement entre les boutons
+                  FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUp()),
+                      );
+                    },
+                    tooltip: 'Créer un compte',
+                    child: Icon(account_circle_outlined),
+                  ),
+                ],
+              )
             ]),
           ),
         ),
