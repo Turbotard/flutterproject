@@ -89,3 +89,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+ios:
+  deployment_target: "16.4" # This is where you specify the iOS version
