@@ -28,6 +28,7 @@ class ElevatedCardExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
     return Center(
       child: Card(
         child: SizedBox(
@@ -62,10 +63,20 @@ class ElevatedCardExample extends StatelessWidget {
                 //   },
                 //   tooltip: 'Accueil',
                 // ),
-                Text(
-                  "Forgot password ?",
-                )
-              ],
+                // Text(
+                //   "Forgot password ?",
+                // )
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyApp()), 
+                    );
+                  },
+                  tooltip: 'Se connecter',
+                  child: Icon(home),
+                ),
+              ]
             ),
           ),
         ),
