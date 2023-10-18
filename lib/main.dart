@@ -136,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Se connecter',
             child: Icon(accountCircleSharp),
           ),
+          SizedBox(width: 16),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -146,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Créer un compte',
             child: Icon(account_circle_outlined),
           ),
-          SizedBox(width: 16), // Add some space between the buttons
+          SizedBox(width: 16),
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
