@@ -1,1 +1,17 @@
-const MONGO_URL = 'mongodb+srv://<username>:<password>@ecurie.6rx1w4w.mongodb.net/ecurie?retryWrites=true&w=majority';
+import "package:mongo_dart/mongo_dart.dart";
+import 'dart:developer';
+import 'constants.dart';
+
+class MongoDatabase {
+  static connect() async {
+    print("rentré");
+    var db = await Db.create(MONGO_URL);
+    await db.open();
+    inspect(db);
+    var status = db.serverStatus();
+    print(status);
+    print("connecté");
+    var collection = db.collection('Ecurie');
+    print(await collection.find().toList());
+  }
+}
