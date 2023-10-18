@@ -16,6 +16,7 @@ class SignUp extends StatelessWidget {
           children: <Widget>[
             Spacer(),
             ElevatedCardExample(),
+            Buttons(),
             Spacer(),
           ],
         ),
@@ -29,8 +30,6 @@ class ElevatedCardExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
-    const IconData accountCircleSharp = IconData(0xe743, fontFamily: 'MaterialIcons');
     return Center(
       child: Card(
         child: SizedBox(
@@ -54,45 +53,48 @@ class ElevatedCardExample extends StatelessWidget {
                     labelText: 'Password',
                   ),
                 ),
-                
-                SizedBox(height: 20,),
-                // FloatingActionButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Forgot password ?',)), 
-                //     );
-                //   },
-                //   tooltip: 'Accueil',
-                // ),
-                // Text(
-                //   "Forgot password ?",
-                // )
-                
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()), 
-                    );
-                  },
-                  tooltip: 'Se connecter',
-                  child: Icon(home),
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Login()), 
-                    );
-                  },
-                  tooltip: 'Se connecter',
-                  child: Icon(accountCircleSharp),
-                ),
               ]
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Buttons extends StatelessWidget {
+  Buttons({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
+    const IconData accountCircleSharp = IconData(0xe743, fontFamily: 'MaterialIcons');
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()), 
+              );
+            },
+            tooltip: 'Se connecter',
+            child: Icon(home),
+          ),
+          SizedBox(width: 20),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Login()), 
+              );
+            },
+            tooltip: 'Se connecter',
+            child: Icon(accountCircleSharp),
+          ),
+        ],
       ),
     );
   }
